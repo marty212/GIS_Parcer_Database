@@ -1,0 +1,324 @@
+; Demo script 6
+;
+; Specify boundaries of coordinate space:
+world  1090000W 1050000W	370000N 410000N
+
+GIS Program
+
+Author: Martin Borstad
+dbFile:	db01.txt
+script:	DemoScript06.txt
+log:	Log01.txt
+Start time: 23:48:38 04/21/2013
+Quadtree children are printed in the order SW  SE  NE  NW
+------------------------------------------------------------
+
+Latitude/longitude values in index entries are shown as signed integers, in total seconds.
+		  147600
+-392400				-378000
+		  133200
+
+------------------------------------------------------------
+;
+; Import a sizeable number of records:
+Command 1:  import	CO_Ouray.txt
+
+
+Imported Features by name:   567
+Longest probe sequence:      10
+Imported Locations:          567
+------------------------------------------------------------
+;
+; Take a look at the indices, if you like:
+;debug	quad
+;debug	hash
+;
+; Perform some square-region searches; each searches a
+; larger region centered at the same point:
+Command 2:  what_is_in	380108N 1074035W	15	15
+
+The following 7 features were found in (380108N +/- 15, 380108N +/- 15)
+45366: Oak Creek  Ouray  380111N 1074033W
+40330: Portland Creek  Ouray  380115N 1074029W
+70976: Whippoorwill Mine  Ouray  380122N 1074031W
+71713: Ouray Hot Springs  Ouray  380116N 1074021W
+10709: Canyon Creek  Ouray  380110N 1074033W
+13590: Uncompahgre Gorge  Ouray  380108N 1074035W
+40184: Box Canyon  Ouray  380106N 1074044W
+------------------------------------------------------------
+Command 3:  what_is_in	380108N 1074035W	30	30
+
+The following 15 features were found in (380108N +/- 30, 380108N +/- 30)
+45515: Cascade Creek  Ouray  380138N 1074025W
+74171: City of Ouray  Ouray  380138N 1074024W
+45366: Oak Creek  Ouray  380111N 1074033W
+40330: Portland Creek  Ouray  380115N 1074029W
+70976: Whippoorwill Mine  Ouray  380122N 1074031W
+71713: Ouray Hot Springs  Ouray  380116N 1074021W
+10709: Canyon Creek  Ouray  380110N 1074033W
+13590: Uncompahgre Gorge  Ouray  380108N 1074035W
+40184: Box Canyon  Ouray  380106N 1074044W
+56752: KURA-FM (Ouray)  Ouray  380122N 1074014W
+57123: Ouray  Ouray  380122N 1074017W
+74676: Ouray Volunteer Fire Department  Ouray  380123N 1074016W
+45783: Mineral Farm  Ouray  380043N 1074038W
+70036: Mineral Farm Mine  Ouray  380042N 1074038W
+70617: Prince Lode Claims Mine  Ouray  380053N 1074018W
+------------------------------------------------------------
+Command 4:  what_is_in	380108N 1074035W	60	60
+
+The following 24 features were found in (380108N +/- 60, 380108N +/- 60)
+39611: Speedwell Mine  Ouray  380148N 1074112W
+39239: Radium Springs Swimming Pool  Ouray  380145N 1074019W
+41199: Skyrocket Creek  Ouray  380149N 1074028W
+45515: Cascade Creek  Ouray  380138N 1074025W
+74171: City of Ouray  Ouray  380138N 1074024W
+45366: Oak Creek  Ouray  380111N 1074033W
+40330: Portland Creek  Ouray  380115N 1074029W
+70976: Whippoorwill Mine  Ouray  380122N 1074031W
+71713: Ouray Hot Springs  Ouray  380116N 1074021W
+10709: Canyon Creek  Ouray  380110N 1074033W
+13590: Uncompahgre Gorge  Ouray  380108N 1074035W
+40184: Box Canyon  Ouray  380106N 1074044W
+40485: Cascade Falls  Ouray  380134N 1073952W
+56752: KURA-FM (Ouray)  Ouray  380122N 1074014W
+57123: Ouray  Ouray  380122N 1074017W
+74676: Ouray Volunteer Fire Department  Ouray  380123N 1074016W
+52039: Amphitheater Campground  Ouray  380121N 1073944W
+45783: Mineral Farm  Ouray  380043N 1074038W
+70036: Mineral Farm Mine  Ouray  380042N 1074038W
+70617: Prince Lode Claims Mine  Ouray  380053N 1074018W
+39488: Rock of the Ages Mine  Ouray  380156N 1074100W
+52166: Rock of the Ages Mine  Ouray  380155N 1074100W
+39842: Sister Peak  Ouray  380142N 1074118W
+45204: Angel Creek  Ouray  380029N 1074125W
+------------------------------------------------------------
+Command 5:  what_is_in	380108N 1074035W	240	240
+
+The following 139 features were found in (380108N +/- 240, 380108N +/- 240)
+44296: Cutler Creek  Ouray  380506N 1074221W
+44720: Dalpaz Ranch  Ouray  380500N 1074242W
+70499: Park Placer Mine  Ouray  380450N 1074230W
+43669: Portland  Ouray  380453N 1074205W
+56870: Ponderosa Heliport  Ouray  380504N 1074205W
+43549: Black Lake  Ouray  380422N 1074212W
+70743: Senorita Mine  Ouray  380452N 1074104W
+70383: News Boy Mine  Ouray  380425N 1074101W
+71476: Happy Jack Mine  Ouray  380410N 1074052W
+69807: Granger Mine  Ouray  380421N 1074005W
+71594: Hummingbird Mine  Ouray  380348N 1074004W
+45667: Moonshine Park  Ouray  380328N 1074334W
+42024: Little Gem Mine  Ouray  380315N 1074222W
+43317: Erickson Ranch  Ouray  380340N 1074224W
+41479: Corbett Creek  Ouray  380333N 1074133W
+43800: Dexter Creek  Ouray  380336N 1074133W
+69462: Dad Town Mine  Ouray  380314N 1074125W
+70156: Nasby Mine  Ouray  380314N 1074125W
+41911: Sequin Mine  Ouray  380247N 1074227W
+41355: Whitehouse Mountain  Ouray  380114N 1074416W
+39727: Twin Peaks  Ouray  380138N 1074157W
+39842: Sister Peak  Ouray  380142N 1074118W
+40071: Alpine Mine  Ouray  380021N 1074235W
+11519: Squaw Gulch  Ouray  380004N 1074139W
+45204: Angel Creek  Ouray  380029N 1074125W
+42834: American Lead and Zinc Mill  Ouray  380318N 1074111W
+43195: Lake Lenore  Ouray  380326N 1074057W
+42965: Pony Express Mine  Ouray  380323N 1074030W
+43435: Syracuse Mine  Ouray  380332N 1074041W
+70268: Neodesha Mine  Ouray  380327N 1074029W
+43084: Wedge Mine  Ouray  380330N 1074002W
+43953: Bachelor Mine  Ouray  380338N 1073941W
+41633: Silvershield Mill  Ouray  380227N 1074059W
+42722: Rotary Park  Ouray  380240N 1074052W
+42608: Sieberg Mine  Ouray  380244N 1074033W
+42255: Schofield Mine  Ouray  380241N 1074019W
+42486: American Nettie Mine  Ouray  380246N 1074021W
+69102: American-Nettie Mine  Ouray  380245N 1074021W
+69347: Chipeta Mine  Ouray  380243N 1074022W
+69577: Donald Mine  Ouray  380243N 1074022W
+69921: Memphis Mine  Ouray  380243N 1074022W
+70859: West View Mine  Ouray  380243N 1074022W
+42141: Wanakah Mine  Ouray  380231N 1074030W
+39488: Rock of the Ages Mine  Ouray  380156N 1074100W
+52166: Rock of the Ages Mine  Ouray  380155N 1074100W
+39371: Elkhorn Ranch  Ouray  380215N 1074040W
+41754: Bridalveil Creek  Ouray  380213N 1074042W
+41085: The Blowout  Ouray  380223N 1073942W
+42371: Jonathan Mine  Ouray  380239N 1074018W
+44068: Almadi Mine  Ouray  380336N 1073915W
+44181: Old Maid Mine  Ouray  380332N 1073907W
+68988: Amador Mine  Ouray  380317N 1073922W
+69691: El Mahdi Mine  Ouray  380335N 1073915W
+69225: Boston Sunday Mine  Ouray  380342N 1073732W
+40964: Cascade Mountain  Ouray  380226N 1073833W
+51918: Bridge of Heaven  Ouray  380206N 1073757W
+39611: Speedwell Mine  Ouray  380148N 1074112W
+39239: Radium Springs Swimming Pool  Ouray  380145N 1074019W
+41199: Skyrocket Creek  Ouray  380149N 1074028W
+45515: Cascade Creek  Ouray  380138N 1074025W
+74171: City of Ouray  Ouray  380138N 1074024W
+45366: Oak Creek  Ouray  380111N 1074033W
+40330: Portland Creek  Ouray  380115N 1074029W
+70976: Whippoorwill Mine  Ouray  380122N 1074031W
+71713: Ouray Hot Springs  Ouray  380116N 1074021W
+10709: Canyon Creek  Ouray  380110N 1074033W
+13590: Uncompahgre Gorge  Ouray  380108N 1074035W
+40184: Box Canyon  Ouray  380106N 1074044W
+40485: Cascade Falls  Ouray  380134N 1073952W
+40611: Chief Ouray Mine  Ouray  380150N 1073927W
+56752: KURA-FM (Ouray)  Ouray  380122N 1074014W
+57123: Ouray  Ouray  380122N 1074017W
+74676: Ouray Volunteer Fire Department  Ouray  380123N 1074016W
+52039: Amphitheater Campground  Ouray  380121N 1073944W
+39958: Cutler Mine  Ouray  380001N 1074115W
+45783: Mineral Farm  Ouray  380043N 1074038W
+70036: Mineral Farm Mine  Ouray  380042N 1074038W
+13343: Bear Creek Falls  Ouray  380000N 1073937W
+70617: Prince Lode Claims Mine  Ouray  380053N 1074018W
+40730: Portland Mine  Ouray  380109N 1073834W
+40845: The Amphitheater  Ouray  380117N 1073857W
+56378: Horsethief Trail  Ouray  380145N 1073745W
+68109: Seven-thirty Mine  Ouray  380002N 1073742W
+13095: Bear Creek Trail  Ouray  375953N 1073722W
+59453: Barhoff Mine  Ouray  375928N 1074036W
+61409: Excelsior Mine  Ouray  375928N 1074036W
+59700: Belle of the West Mine  Ouray  375928N 1074025W
+66264: Saxon Mine  Ouray  375928N 1074027W
+10151: Bear Creek  Ouray  375957N 1073939W
+12503: Ralston Creek  Ouray  375957N 1073941W
+13474: Sutton Mill  Ouray  375956N 1073931W
+63976: Maud S Mine  Ouray  375929N 1073955W
+12658: Silver Gulch  Ouray  375854N 1073923W
+60924: Dunmore Mine  Ouray  375853N 1073928W
+12932: West Riverside Slide  Ouray  375814N 1073931W
+14182: Curran Gulch  Ouray  375817N 1073927W
+14331: East Riverside Slide  Ouray  375813N 1073928W
+13748: Red Mountain Creek  Ouray  375917N 1073914W
+13905: Climax Creek  Ouray  375912N 1073851W
+62267: Homestake Mine  Ouray  375931N 1073833W
+62629: Jay Eye See Mine  Ouray  375931N 1073833W
+67734: Yellow Jacket Mine  Ouray  375931N 1073833W
+62512: Jackpot Mine  Ouray  375930N 1073853W
+13222: Grizzly Bear Mine  Ouray  375953N 1073818W
+12809: Mother Cline Slide  Ouray  375858N 1073908W
+63720: Little Balm of Gilead Mine  Ouray  375856N 1073914W
+64339: Monarch Mine  Ouray  375842N 1073847W
+14060: Michael Breen Mine  Ouray  375830N 1073806W
+12383: Half Moon Basin  Ouray  375743N 1074049W
+14494: Hendrick Gulch  Ouray  375756N 1073938W
+14773: Crystal Lake  Ouray  375731N 1073952W
+14904: Saint Germain Foundation  Ouray  375729N 1073939W
+52925: Full Moon Dam  Ouray  375736N 1073956W
+14651: Lucky Twenty Mine  Ouray  375737N 1073910W
+61781: Guadaloupe Mine  Ouray  375731N 1073853W
+62994: Keno Mine  Ouray  375720N 1073909W
+15034: Abrams Mountain  Ouray  375744N 1073826W
+17246: Mineral Creek  Ouray  375754N 1073736W
+3681: Bimettalist Mine  Ouray  375850N 1074411W
+59828: Bi-metallist Mine  Ouray  375850N 1074411W
+62030: Hawkeye Mine  Ouray  375842N 1074423W
+1759: Sneffels Creek  Ouray  375818N 1074338W
+11115: Imogene Creek  Ouray  375818N 1074338W
+10862: Camp Bird  Ouray  375822N 1074335W
+10986: Camp Bird Number 14 Level  Ouray  375813N 1074334W
+12109: Fall Creek  Ouray  375904N 1074229W
+55238: Weehawken Pack Trail  Ouray  375952N 1074221W
+3128: Weehawken Creek  Ouray  375934N 1074200W
+11670: Lewis Creek  Ouray  375950N 1074152W
+11823: Thistledown  Ouray  375937N 1074159W
+11949: Thistledown Creek  Ouray  375947N 1074153W
+3286: Senator Gulch  Ouray  375902N 1074229W
+10557: Waterhole Slide  Ouray  375842N 1074301W
+11271: Pierson Basin  Ouray  375743N 1074430W
+11390: United States Mountain  Ouray  375724N 1074421W
+3921: Yellow Rose Mine  Ouray  375717N 1074324W
+4161: Richmond Creek  Ouray  375727N 1074328W
+3802: Bankers Tunnel  Ouray  375726N 1074307W
+12261: Hayden Mountain  Ouray  375716N 1074209W
+------------------------------------------------------------
+;
+; Now, perform some searches with non-square regions:
+Command 6:  what_is_in	380206N 1073757W	30	60
+
+The following 3 features were found in (380206N +/- 30, 380206N +/- 60)
+51918: Bridge of Heaven  Ouray  380206N 1073757W
+40964: Cascade Mountain  Ouray  380226N 1073833W
+56378: Horsethief Trail  Ouray  380145N 1073745W
+------------------------------------------------------------
+Command 7:  what_is_in	380206N 1073757W	240	15
+
+The following 4 features were found in (380206N +/- 240, 380206N +/- 15)
+51918: Bridge of Heaven  Ouray  380206N 1073757W
+56378: Horsethief Trail  Ouray  380145N 1073745W
+68109: Seven-thirty Mine  Ouray  380002N 1073742W
+14060: Michael Breen Mine  Ouray  375830N 1073806W
+------------------------------------------------------------
+Command 8:  what_is_in	380206N 1073757W	60	600
+
+The following 47 features were found in (380206N +/- 60, 380206N +/- 600)
+51209: Middle Canyon  Ouray  380258N 1073339W
+46500: Bighorn Ridge  Ouray  380227N 1073533W
+46028: Blackwall Mountain  Ouray  380144N 1073353W
+41633: Silvershield Mill  Ouray  380227N 1074059W
+42722: Rotary Park  Ouray  380240N 1074052W
+42608: Sieberg Mine  Ouray  380244N 1074033W
+42255: Schofield Mine  Ouray  380241N 1074019W
+42486: American Nettie Mine  Ouray  380246N 1074021W
+69102: American-Nettie Mine  Ouray  380245N 1074021W
+69347: Chipeta Mine  Ouray  380243N 1074022W
+69577: Donald Mine  Ouray  380243N 1074022W
+69921: Memphis Mine  Ouray  380243N 1074022W
+70859: West View Mine  Ouray  380243N 1074022W
+42141: Wanakah Mine  Ouray  380231N 1074030W
+39488: Rock of the Ages Mine  Ouray  380156N 1074100W
+52166: Rock of the Ages Mine  Ouray  380155N 1074100W
+39371: Elkhorn Ranch  Ouray  380215N 1074040W
+41754: Bridalveil Creek  Ouray  380213N 1074042W
+41085: The Blowout  Ouray  380223N 1073942W
+42371: Jonathan Mine  Ouray  380239N 1074018W
+40964: Cascade Mountain  Ouray  380226N 1073833W
+51918: Bridge of Heaven  Ouray  380206N 1073757W
+40485: Cascade Falls  Ouray  380134N 1073952W
+40611: Chief Ouray Mine  Ouray  380150N 1073927W
+56752: KURA-FM (Ouray)  Ouray  380122N 1074014W
+57123: Ouray  Ouray  380122N 1074017W
+74676: Ouray Volunteer Fire Department  Ouray  380123N 1074016W
+52039: Amphitheater Campground  Ouray  380121N 1073944W
+39611: Speedwell Mine  Ouray  380148N 1074112W
+39239: Radium Springs Swimming Pool  Ouray  380145N 1074019W
+41199: Skyrocket Creek  Ouray  380149N 1074028W
+45515: Cascade Creek  Ouray  380138N 1074025W
+74171: City of Ouray  Ouray  380138N 1074024W
+45366: Oak Creek  Ouray  380111N 1074033W
+40330: Portland Creek  Ouray  380115N 1074029W
+70976: Whippoorwill Mine  Ouray  380122N 1074031W
+71713: Ouray Hot Springs  Ouray  380116N 1074021W
+10709: Canyon Creek  Ouray  380110N 1074033W
+13590: Uncompahgre Gorge  Ouray  380108N 1074035W
+40184: Box Canyon  Ouray  380106N 1074044W
+40730: Portland Mine  Ouray  380109N 1073834W
+40845: The Amphitheater  Ouray  380117N 1073857W
+56378: Horsethief Trail  Ouray  380145N 1073745W
+41911: Sequin Mine  Ouray  380247N 1074227W
+41355: Whitehouse Mountain  Ouray  380114N 1074416W
+39727: Twin Peaks  Ouray  380138N 1074157W
+39842: Sister Peak  Ouray  380142N 1074118W
+------------------------------------------------------------
+;
+Command 9:  what_is_in	380122N 1074017W	30	6
+
+The following 6 features were found in (380122N +/- 30, 380122N +/- 6)
+39239: Radium Springs Swimming Pool  Ouray  380145N 1074019W
+71713: Ouray Hot Springs  Ouray  380116N 1074021W
+56752: KURA-FM (Ouray)  Ouray  380122N 1074014W
+57123: Ouray  Ouray  380122N 1074017W
+74676: Ouray Volunteer Fire Department  Ouray  380123N 1074016W
+70617: Prince Lode Claims Mine  Ouray  380053N 1074018W
+------------------------------------------------------------
+;
+; Exit:
+Command 10:  quit
+
+Terminating execution of commands.
+End Time: 23:48:38 04/21/2013
+------------------------------------------------------------
